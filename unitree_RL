@@ -29,7 +29,13 @@ mkdir build && cd build
 cmake .. && make
 
 # 3 - 2 Download mujoco I've used C++ version in https://github.com/unitreerobotics/unitree_mujoco
-# 3 - 3 Change settings in unitree_mujoco/simulate/config.yaml
+# 3 - 3 Change settings in unitree_mujoco/simulate/config.yaml to the required settings. Also change 
+
+   # policy_dir: config/policy/velocity
+    policy_dir: /home/____/unitree_rl_lab/deploy/robots/g1_29dof/config/policy/velocity/
+
+if required 
+
 # 3 - 4 To use joystick as a controller i installed joystick add on (I used 8bitdo ultimale 2 with C to A usb gender no addition setup needed, you can check connection in https://hardwaretester.com/gamepad)
 sudo apt update
 sudo apt install -y joystick evtest
@@ -54,4 +60,5 @@ warning] Waiting for connection rt/lowstate
 cd ~/unitree_rl_lab/deploy/robots/g1_29dof/build
 ./g1_ctrl --network lo
 
-
+# 3 - 6 The trained policy is in unitree_rl_lab/logs/rsl_rl/unitree_g1_29dof_velocity/2025-09-18_16-48-22/exported/policy.onnx 
+copy the policy and change the policy in unitree_rl_lab/deploy/robots/g1_29dof/config/policy/velocity/v0/exported/policy.onnx to a desired policy of choice
