@@ -1,4 +1,4 @@
-#To enable turning in isaac lab is change  at /home/USER/unitree_rl_lab/source/unitree_rl_lab/unitree_rl_lab/tasks/locomotion/robots/g1/29dof/velocity_env_cfg.py
+ #To enable turning in isaac lab is change  at /home/USER/unitree_rl_lab/source/unitree_rl_lab/unitree_rl_lab/tasks/locomotion/robots/g1/29dof/velocity_env_cfg.py
 
 @configclass
 class CommandsCfg:
@@ -89,6 +89,26 @@ class RobotEnvCfg(ManagerBasedRLEnvCfg):
                 self.scene.terrain.terrain_generator.curriculum = False
 
 # There may be many other solutions.
+
+# Training commands
+
+# python scripts/rsl_rl/train.py --headless --task Unitree-G1-29dof-Velocity is the basic command used for training the followings are commands used for ones need
+
+ -- num_envs 4000 : change the number of envs in enviroment
+ -- max_iter 5000 : change the number of max iteration before termination
+
+# There are cases you need to check after a certain amount of iters and resume training the following commands are how i use it
+
+python scripts/rsl_rl/train.py \
+  --task Unitree-G1-29dof-Velocity \
+  --headless \
+  --resume \
+  --experiment_name Unitree-G1-29dof-Velocity \ 
+  --load_run {file name} \
+  --checkpoint model_{number}.pt \
+  --num_envs 4000 \ 
+  --max_iterations 6000
+
 
 # The utilities imported as isaaclab.___ are in home/IsaacLab/source/isaaclab/isaaclab the followings are short explanations for the usage
 
