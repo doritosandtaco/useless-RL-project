@@ -153,6 +153,15 @@ python scripts/rsl_rl/train.py \
   --num_envs 4000 \ 
   --max_iterations 6000
 
+# Play commands
+
+python scripts/rsl_rl/play.py \
+  --task Unitree-G1-29dof-Velocity \
+  --experiment_name unitree_g1_29dof_velocity \
+  --run_name 2025-10-21_10-45-39\
+  --checkpoint /home/doritos/unitree_rl_lab/logs/rsl_rl/unitree_g1_29dof_velocity/2025-10-21_10-45-39/model_1200.pt \
+  --num_envs 10 \
+
 
 # The utilities imported as isaaclab.___ are in home/IsaacLab/source/isaaclab/isaaclab the followings are short explanations for the usage
 
