@@ -147,10 +147,10 @@ python scripts/rsl_rl/train.py \
   --task Unitree-G1-29dof-Velocity \
   --headless \
   --resume \
-  --experiment_name Unitree-G1-29dof-Velocity \ 
-  --load_run {file name} \
-  --checkpoint model_{number}.pt \
-  --num_envs 4000 \ 
+  --experiment_name unitree_g1_29dof_velocity \
+  --load_run 2025-10-21_10-45-39 \
+  --checkpoint model_1200.pt \
+  --num_envs 1024 \
   --max_iterations 6000
 
 # Play commands
