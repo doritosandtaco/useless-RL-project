@@ -132,12 +132,19 @@ resampling_time_range = (2.0,2.0)
             lin_vel_x=(-0.5, 1.0), lin_vel_y=(-0.3, 0.3), ang_vel_z=(-1.0 ,1.0)
         ),
 
+# There may be many other solutions.
 
 ######### YOU MUST ROLL BACK THIS CHANGE WHEN TRAINING A NEW POLICY AGENT WILL NOT LEARN#################
     
-# There may be many other solutions.
+
 
 # Training commands
+
+python scripts/rsl_rl/train.py \
+  --task Unitree-G1-29dof-Velocity \
+  --headless \
+  --num_envs 4000 \
+  --max_iterations 6000
 
 # python scripts/rsl_rl/train.py --headless --task Unitree-G1-29dof-Velocity is the basic command used for training the followings are commands used for ones need
 
@@ -153,7 +160,7 @@ python scripts/rsl_rl/train.py \
   --experiment_name unitree_g1_29dof_velocity \
   --load_run 2025-10-21_10-45-39 \
   --checkpoint model_1200.pt \
-  --num_envs 1024 \
+  --num_envs 4000 \
   --max_iterations 6000
 
 # Play commands
